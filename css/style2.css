@@ -1,0 +1,91 @@
+body
+{
+  background-image: url(../images/back2.jpg);
+  background-size: cover;
+  
+}
+
+.login
+{
+        position: absolute;
+        margin-top: 30px;
+    
+}
+table
+{
+    background-color: aliceblue;
+
+}
+
+td{
+    padding: 10px 20px;
+   
+}
+.field{
+     
+    transition-duration: 0.6s;
+    outline: none;
+    border-radius:10px;
+    font-size: small;
+    
+    border:1px solid;
+    align-items: center;
+    background-color: rgb(230, 222, 222);
+}
+#second
+{
+    display: none;
+}
+.field:hover
+{
+    background-color: rgb(87, 216, 233); 
+}
+.fieldin
+{
+    width: 90%;
+    padding: 10px;
+    outline: none;
+    border:none;
+    border-radius: 10px;
+    background-color: rgb(230, 222, 222);
+    font-weight: bolder;
+    
+}
+.toggle-password
+{
+    color:#333;
+    margin-left:3px;
+    cursor: pointer;
+    
+}
+.submit
+{
+    width:290px;
+    height: 35px;
+    
+    background-color:dodgerblue;
+    
+    outline: none;
+    border-radius:10px;
+    color: white;
+    border:1px solid grey ;
+    transition-duration: 0.4s;
+}
+.submit:hover
+{
+    background-color: rgb(134, 135, 136)
+    
+}
+.signup
+{
+    width:100px;
+    height: 35px;
+    
+    background-color: rgba(71,64,64);
+    outline: none;
+    border-radius:10px;
+    color: white;
+    border: 1px solid  grey;
+    position: relative;
+    margin-left: 50px;
+}

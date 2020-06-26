@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatkaro</title>
+ 
+     <link type="text/css" rel="stylesheet" href="css/style2.css">
+     
+     <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/load.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href='https://fonts.googleapis.com/css?family=Barriecito' rel='stylesheet'>
+     <script src="js/jquery.js"></script>
+     <script src="js/login.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <script src='https://codepen.io/_fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
+  <script src="js/loader.js"></script>
+
+    </head>
+<body>
+
+ <!--Preoader Start-->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        
+      </div>
+
+
+ <!--Preloader End-->
+
+   <!--Navbar Start-->
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand " href="#"></a>
+
+      </div>  
+      </nav>
+    <!--Navbar End-->
+       
+    <!--Login Form End-->
+       <div class="container-fluid col-md-3">
+        <table style="background-color: transparent;">
+            <tr>
+                   
+                <td style="text-align: center;"><i style="color: orange;" class="fa fa-commenting-o fa-4x"></i><span style=" font-size:50px;color: dodgerblue;">  ChatKaro</span></td>
+            </tr>
+           </table>
+       </div>
+       <div class="container-fluid col-md-3 login" id="first">
+           <form action="" >
+               
+               <table style="border:2px solid rgb(173, 170, 170)">
+                   
+                
+                 <tr>
+                     <td style="text-align: center;"><h4>Ready To Login</h4></td>
+                 </tr>
+                   <tr>
+                       
+                       <td><div class="field"><input type="email" class="fieldin" placeholder="Email" id="loginemail"></div></td>
+                   </tr>
+                   <tr>
+                       
+                       <td><div class="field"><input class="fieldin" placeholder="Password" data-toggle="#myPassword1" type="password" id="myPassword1">   <i class="fa fa-fw fa-eye field-icon toggle-password"  onmouseover="mouseoverPass1();" onmouseout="mouseoutPass1();"></i></div></td>
+                   </tr>
+                   <tr>
+                    
+                    <td>
+                     <label style="cursor: pointer;"> <input type="checkbox" name="Remember" style="border: none; outline: none; background-color: white;"id=""> Remember Me</label>
+                      <a href="#" style="margin-left: 30px; " id="forgot">Forgot Password ?</a>
+                    </td>
+                    
+                  </tr>
+                   <tr>
+                       
+                       
+                       <td ><input type="submit" class="submit" value="Sign In" id="loginto"></td>
+                       
+                   </tr>
+                   <tr>
+                     
+                     <td  style="text-align: center;">New User ?<a href="#" id="signup"> Create an Account</a></td>
+                   </tr>
+                   
+                   
+               </table>
+               
+           </form>
+       </div> 
+       <!--Login Form End-->
+
+      <!--Registration Form Start-->
+
+       <div class="container-fluid col-md-3 login" id="second">
+        <form action="" id="form" name="form2" >
+            
+            <table style="border:2px solid rgb(173, 170, 170)">
+                <tr>
+                    
+                    <td style="text-align: center;"><h4>Sign Up in ChatKaro</h4></td>
+                </tr>
+                <tr>
+                  
+                  <td><div class="field"><input type="text" class="fieldin" placeholder="Full Name" id="name"></div></td>
+              </tr>
+            
+                <tr>
+                    
+                    <td><div class="field"><input type="email" class="fieldin" placeholder="Email" id="registeremail"></div></td>
+                </tr>
+                <tr>
+                    
+                    <td><div class="field"><input class="fieldin" placeholder="Password" data-toggle="#myPassword2" type="password" id="myPassword2">   <i class="fa fa-fw fa-eye field-icon toggle-password"  onmouseover="mouseoverPass2();" onmouseout="mouseoutPass2();"></i></div></td>
+                </tr>
+                <tr>
+                  <td ><div class="field"><input class="fieldin" placeholder="Confirm Password" data-toggle="#confPassword" type="password" id="confPassword">   <i class="fa fa-fw fa-eye field-icon toggle-password"  onmouseover="mouseoverPass3();" onmouseout="mouseoutPass3();"></i></div></td>
+              </tr>
+                <tr>
+                 
+                 <td >
+                  <label style="cursor: pointer;"> <input type="checkbox"  style="border: none; outline: none; background-color: white;" name="terms"> Agree to terms and conditions</label>
+                       
+                 </td>
+                 
+               </tr>
+                <tr>
+                    
+                    
+                    <td><input type="submit" class="submit" value="Sign Up" id="register"></td>
+                    
+                </tr>
+                <tr>
+                  
+                  <td  style="text-align: center;">Already on ChatKaro ?<a href="#" id="signin1"> Sign In</a></td>
+                </tr>
+                
+                
+            </table>
+            
+         </form>
+      </div>
+
+      <!--Registration Form End-->
+
+      <!--Forgot Password Form Start-->
+    
+             <div class="container-fluid col-md-3 login" id="third" style="display: none;">
+           <form action="">
+               
+               <table style="border:2px solid rgb(173, 170, 170)">
+               
+                   <tr>
+                         
+                       <td style="text-align: center;"><h4>Forgot Password</h4></td>
+                   </tr>
+               
+                   <tr>
+                       <td><div class="field"><input type="email" class="fieldin" placeholder="Email" id="loginemail"></div></td>
+                   </tr>
+                 
+                 
+                   <tr>
+                       
+                       
+                       <td><input type="submit" class="submit" value="Reset Password" id="reset"></td>
+                       
+                   </tr>
+                   <tr>
+                     
+                     <td style="text-align: center;">Remember your password?<a href="#" id="signin2"> Sign In</a></td>
+                   </tr>
+                   
+                   
+               </table>
+               
+           </form>
+       </div> 
+    
+      <!--Forgot Password Form End-->
+
+
+</body>
+</html>

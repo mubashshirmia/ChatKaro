@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/chat.css" >
+    <link rel="stylesheet" href="css/emojionearea.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="js/chatpicker.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/emojionearea.min.js"></script>
+     <script src="js/chat.js"></script>
+     <!-- only for new-message-container dropup -->
+     <style>
+
+       .dropbtn1 {
+        
+        color: white;
+        padding: 16px;
+        font-size: 26px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropbtn1 i{
+        color: rgb(134, 130, 130);
+      }
+      .dropup {
+        
+        display: inline-block;
+      }
+      
+      .dropup-content {
+        display: none;
+        position: absolute;
+        /* background-color: #f1f1f1;
+        min-width: 160px;*/
+         bottom: 50px;
+        z-index: 1;
+        
+      }
+      
+      .dropup-content label {
+        color: black;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        margin-bottom:10px ;
+        border-radius: 100%;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+      
+        /* background-image: linear-gradient(to right, #051937 , #17D7E9); */
+      }
+      #attach-pic{
+        background-image: linear-gradient(to right, #dc2430 , #7b4397);
+      }
+      #attach-camera{
+        background-image: linear-gradient(to right, #085078 ,#85d8ce);
+      }
+      #attach-user{
+        background-image: linear-gradient(to top, #373b44 , #4286f4);
+      }
+      #attach-file{
+        background-image: linear-gradient(to right, #02b6ce 60% , #0abeaf );
+      }
+
+      .dropup-content a i{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .dropup-content a:hover {background-color: #ccc}
+    
+        
+        
+       
+     </style>
+
+    <title>Chatkaro1</title>
+</head>
+<body>
+   
+    <div class="chat-container">
+
+
+        <div id="chat-title">
+          <div class="img-box"> <img id="profile_img" src="images/hrithik.jpg" alt="image" style="width: 40px;">
+          </div>
+         
+          <div class="title-name"><label id="frnd-title" for="">Hrithik Roshan</label>
+            <p style="font-size: 14px;">last seen two days ago</p>
+
+            </div>
+          <div class="icons">
+            <a href="contact.html" title="SEARCH"  data-toggle="modal" data-target="#myModal0" >
+              <i  onclick="myFunction()" class="fa fa-search  title-icon "></i>
+            </a>
+            <a href="videocall.html" title="VIDEO CALL">
+              <i  onclick="myFunction()" class="fa fa-video-camera  title-icon "></i>
+            </a>
+            <a href="call.html" title="PHONE CALL">
+              <i  onclick="myFunction()" class="fa fa-phone  title-icon"></i>
+            </a>
+           
+          </div>
+        </div>
+
+
+
+
+        <!-- modal for chat-title search icon -->
+        <div class="modal fade" id="myModal0" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content" style="height: 450px;" >
+              <div class="modal-header">
+                <h4 class="modal-title">Search Messages</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+               
+              </div>
+              <div class="modal-body" >
+                <div >
+                  <input id="contact-search" type="text" name="search" placeholder="Type message">
+                  <a class="contact-search-btn" margin-right="20px" href=""><i class="fa fa-search fa-1x "></i></a>
+               </div>
+              
+              </div>
+              
+              <div class="modal-footer" >
+                <button type="button" class="btn btn-info" >Done</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+
+
+
+        <div id="search-container">
+            <img id="profile_img" src="images/deep.jpg" alt="image" style="width: 40px;">
+            <label for="">Deepanjan Adak</label>
+            <div class="dropdown">
+              <a>
+                <i  onclick="myFunction()" class="fa fa-ellipsis-v fa-1x dropbtn"></i>
+              </a>
+                  <div id="myDropdown" class="dropdown-content" style="right:0">
+                  <a  data-toggle="modal" data-target="#myModal1" >New Group</a>
+                  <a data-toggle="modal" data-target="#myModal2" href="#">Profile</a>
+                  
+                  <a data-toggle="modal" data-target="#myModal3" href="#">Settings</a>
+                  <a data-toggle="modal" data-target="#myModal4" href="#">Sign Out</a>
+
+
+                  </div>
+              </div> 
+
+
+             
+              
+               </div>
+          <!-- Modal for dropdown content New Group-->
+                <div class="modal fade" id="myModal1" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content" >
+                      <div class="modal-header">
+                        <h4 class="modal-title">Add Participents</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       
+                      </div>
+                      <div class="modal-body" style="background-color: beige;">
+                        <div >
+                           <input id="contact-search" type="text" name="search" placeholder="Type Participents Name">
+                           <a class="contact-search-btn" margin-right="20px" href=""><i class="fa fa-search fa-1x "></i></a>
+                        </div>
+                        <div id="target-div" style="margin: 15px;">
+                          <div id="target" class="row Participent-img"  onclick="remove()"></div>
+                        </div>
+                      <div style="margin-top: 20px;">
+                        <div class="Participent" >
+                          <img  class="Participent-img" id="imgforgroup" src="images/hrithik.jpg" alt="Hrithik">
+                          <div class="title-name">
+                            Hrithik 
+                          </div>
+                          <div class="checkbox">
+                           <input  type="checkbox" onclick="mydom()">
+                          </div>
+                        </div> 
+                        <div class="Participent">
+                          <img  class="Participent-img" id="imgforgroup1" src="images/akshay.png" alt="Hrithik">
+                          <div class="title-name">
+                            Akshay
+                          </div>
+                          <div class="checkbox">
+                            <input  type="checkbox" onclick="mydom()">
+                           </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button data-toggle="modal" data-target="#myModal6"type="button" class="btn btn-info" >Done</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                 <!-- Modal for dropdown content Profile -->
+                 <div class="modal fade" id="myModal2" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content" >
+                      <div class="modal-header">
+                        <h4 class="modal-title">Profile</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       
+                      </div>
+                      <div class="modal-body" >
+                        <div class="img-div" id="imgDiv">
+                           <img  id="Own-profile-img" class="image-preview--image"  src="" alt="">
+                        </div>
+                        <div id="profile-title-div" >
+                          <div> 
+                            <label id="title" for="">Your Name</label>
+                          </div>
+                          <div id="text">
+                            <input style="width: 100%; height: 80%;" type="text">
+                            <a href=""><i class="fa fa-pencil fa-lg"></i></a>
+                          </div>
+                          <div>
+                             <label id="title" for="">About</label>
+                            </div>
+                            <div id="text">
+                              <input style="width: 100%; height: 80%;" type="text">
+                              <a href=""><i class="fa fa-pencil fa-lg"></i></a>
+                            </div>
+                         <div>
+                           <input type="file" id="real-file" hidden="hidden"/>
+                          <p class="title" id="custom-button" style="margin-top: 20px;">Change Walpaper</p>
+                         </div>
+                          
+                        </div>
+                      </div>
+                      
+                      <div class="modal-footer" >
+                        <button type="button" class="btn btn-info" >Done</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+
+                <!-- After selection of group members name for create the group name and pic  -->
+ <!-- Modal for dropdown content new group done button -->
+ <div class="modal fade" id="myModal6" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content" style="height: 450px;" >
+      <div class="modal-header">
+        <h4 class="modal-title">Group Name</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+      </div>
+      <div class="modal-body" >
+        <div class="img-div" id="imgDiv">
+          <img  id="Own-profile-img" class="image-preview--image"  src="" alt="">
+       </div>
+       <div id="group-title-div"  >
+         <div> 
+           <label id="title" for="">Group Name</label>
+         </div>
+         <div id="text">
+           <input style="width: 100%; height: 80%;" type="text">
+           <a href=""><i class="fa fa-pencil fa-lg"></i></a>
+         </div>
+      </div>
+      </div>
+      
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-info" >Done</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+               
+                 <!-- Modal for Signout -->
+                <div class="modal fade" id="myModal4" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content" id="Setting-content"style="height: 250px;background-color: black;">
+                      <div style="border-bottom: 1px solid rgb(179, 169, 169);">
+                        <h6 style="margin-top: 20px;">Sign Out</h6>
+                        <p style="margin-top: 30px;">Are you sure want to sign out?</p>
+                      </div>
+                      <div style="border-bottom: 1px solid rgb(179, 169, 169);">
+                        <p style="margin-top: 15px;">Cancel</p>
+                      </div>
+                      <div style="border-bottom: 1px solid rgb(179, 169, 169);">
+                        <p style="margin-top: 15px;">Sign Out</p>
+                      </div>
+
+
+                   
+                    </div>
+                    
+                  </div>
+                </div>
+
+
+
+                               <!-- Modal for Settings -->
+                               <div class="modal fade" id="myModal3" role="dialog">
+                                <div class="modal-dialog">
+                                
+                                  <!-- Modal content-->
+                                  <div class="modal-content" >
+              
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Settings</h4>
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                     
+                                    </div>
+                
+                                     <!--Settings Main Menu Start-->
+                                     <div class="modal-body" id="mbody1" style="background-color: beige;display: block;">
+                      
+                      
+                                      <div class="Participent" style="padding: 30px 10px;" >
+                                        <img   style="width: 70px; border-radius: 100%;"  src="images/hrithik.jpg"  alt="Hrithik">
+                                        <div style="margin-left: 40px; margin-top: 20px;">
+                                          Hrithik 
+                                        </div>
+                                      </div>
+              
+                                      <div class="Participent" onclick="accntfunc()" >
+                                        <a><i class="fa fa-key" aria-hidden="true"></i></a>
+                                          Account 
+                                      </div> 
+              
+                                     
+              
+                                      <div class="Participent" onclick="chat_wal_func()"  >
+                                        <a><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                                          Chat Wallpaper
+                                      </div> 
+                                      <div class="Participent" onclick="blckdfunc()" >
+                                        <a><i class="fa fa-ban" aria-hidden="true"></i></a>
+                                          Blocked 
+                                      </div> 
+                
+                                    
+                                    </div>
+                                    <!--Setting Main Menu End-->
+              
+                                    <!--After clicking accounts start-->
+              
+                                    <div class="modal-body" id="mbody2" style="background-color: beige; display: none;">
+                                        
+                                     <h4 style="text-align: center;">Account Settings</h4>
+                                      <br>
+                              
+                                      <div class="Participent" onclick="changemail()" >
+                                        <a><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                                          Change Email id
+                                      </div> 
+              
+                                      <div class="Participent" onclick="changepass()" >
+                                        <a><i class="fa fa-key" aria-hidden="true"></i></a>
+                                          Change Password 
+                                      </div> 
+              
+                                      <div class="Participent" onclick="deleteaccnt()"  >
+                                        <a><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                          Delete my account
+                                      </div> 
+                      
+                                    </div>
+              
+              
+              
+                                    <div class="modal-body" id="mbody21" style="background-color: beige; display: none;">
+                                      <form action="" >
+                                       
+                                            
+                                              <input type="text" class="form-control" name="" id="" placeholder="Enter Your Password">
+              
+                                               <p></p>
+                                                <input type="submit" class="btn btn-info">                                
+                                      </form>
+                                   </div>
+              
+                                   <div class="modal-body" id="mbody22" style="background-color: beige; display: none;">
+                                    <form action="" >
+                                     <h6 style="text-align: center;">Do you want delete your account ?</h6>
+                                     <br>
+                                     <button type="button" class="btn btn-danger">Yes</button>
+                                     <button type="button" style="float: right;" class="btn btn-success">No</button>
+                                                             
+                                    </form>
+                                 </div>
+              
+                                 <div class="modal-body" id="mbody23" style="background-color: beige; display:none;">
+                                  <form action="" >
+                                   
+                                        
+                                          <input type="text" class="form-control" name="" id="" placeholder="Enter new password">
+                                          <p></p>
+                                          <input type="text" class="form-control" name="" id="" placeholder="Enter to confirm new password">
+              
+                                           <p></p>
+                                            <input type="submit" class="btn btn-info">                                
+                                  </form>
+                               </div>
+                      
+                               <div class="modal-body" id="mbody24" style="background-color: beige; display: none;">
+                                <form action="" >
+                                 
+                                      
+                                        <input type="text" class="form-control" name="" id="" placeholder="Enter Your New Email">
+              
+                                         <p></p>
+                                          <input type="submit" class="btn btn-info">                                
+                                </form>
+                             </div>
+                               
+              
+              
+                                    <!--After clicking account end-->
+              
+                                 <!--After clicking Chat Wallpaper start-->
+              
+                                 <div class="modal-body" id="mbody3" style="background-color: beige;  overflow-y: auto; display: none;">
+                                    <h4 style="text-align: center;"> Set Chat Wallpaper</h4>
+                                    <br>
+                                    <div style="margin-left:26px ;">
+                                  
+              
+                                  <div class="color-picker" onclick="colorparmanent1()" id="colorpic1" style="background-color: rgb(237, 233, 228); overflow: auto;"><br><span style="margin-left: 20px;">Default</span></div>
+                                  <div class="color-picker" onclick="colorparmanent2()" id="colorpic2" style="background-color: rgb(204,235,220);"></div> 
+                                  <div class="color-picker" onclick="colorparmanent3()" id="colorpic3" style="background-color: rgb(174,216,199);"></div> 
+                                  <div class="color-picker" onclick="colorparmanent4()" id="colorpic4" style="background-color: rgb(122,203,165);"></div>
+                                  <div class="color-picker" onclick="colorparmanent5()" id="colorpic5" style="background-color: rgb(199,233,235);"></div>
+                                  <div class="color-picker" onclick="colorparmanent6()" id="colorpic6" style="background-color: rgb(169,219,216);"></div>
+                                  <div class="color-picker" onclick="colorparmanent7()" id="colorpic7" style="background-color: rgb(104,213,217);"></div>
+                                  <div class="color-picker" onclick="colorparmanent8()" id="colorpic8" style="background-color: rgb(110,195,212);"></div>
+                                  <div class="color-picker" onclick="colorparmanent9()" id="colorpic9" style="background-color: rgb(242,218,213);"></div>
+                                  <div class="color-picker" onclick="colorparmanent10()" id="colorpic10" style="background-color: rgb(242,213,225);"></div>
+                                  <div class="color-picker" onclick="colorparmanent11()" id="colorpic11" style="background-color: rgb(251,202,210);"></div>
+                                  <div class="color-picker" onclick="colorparmanent12()" id="colorpic12" style="background-color: rgb(255,167,168);"></div>
+                                  <div class="color-picker" onclick="colorparmanent13()" id="colorpic13" style="background-color: rgb(203,218,236);"></div>
+                                  <div class="color-picker" onclick="colorparmanent14()" id="colorpic14" style="background-color: rgb(215,211,235);"></div>
+                                  <div class="color-picker" onclick="colorparmanent15()" id="colorpic15" style="background-color: rgb(229,192,235);"></div>
+                                  <div class="color-picker" onclick="colorparmanent16()" id="colorpic16" style="background-color: rgb(208, 222, 177);"></div>
+                                  <div class="color-picker" onclick="colorparmanent17()" id="colorpic17" style="background-color: rgb(222, 224, 180);"></div>
+                                  <div class="color-picker" onclick="colorparmanent18()" id="colorpic18" style="background-color: rgb(230, 223, 168);"></div>
+                                  <div class="color-picker" onclick="colorparmanent19()" id="colorpic19" style="background-color: rgb(247, 233, 168);"></div>
+                                  <div class="color-picker" onclick="colorparmanent20()" id="colorpic20" style="background-color: rgb(255, 209, 164);"></div>
+                                  <div class="color-picker" onclick="colorparmanent21()" id="colorpic21" style="background-color: rgb(255, 138, 140);"></div>
+                                  <div class="color-picker" onclick="colorparmanent22()" id="colorpic22" style="background-color: rgb(255, 89, 120);"></div>
+                                  <div class="color-picker" onclick="colorparmanent23()" id="colorpic23" style="background-color: rgb(245, 96, 86);"></div>
+                                  <div class="color-picker" onclick="colorparmanent24()" id="colorpic24" style="background-color: rgb(220, 110, 79);"></div>
+                                  <div class="color-picker" onclick="colorparmanent25()" id="colorpic25" style="background-color: rgb(230, 227, 101);"></div>
+                                  <div class="color-picker" onclick="colorparmanent26()" id="colorpic26" style="background-color: rgb(115, 199, 128);"></div>
+                                  <div class="color-picker" onclick="colorparmanent27()" id="colorpic27" style="background-color: rgb(34, 147, 164);"></div>
+                                  <div class="color-picker" onclick="colorparmanent28()" id="colorpic28" style="background-color: rgb(33, 158, 217);"></div>
+                                  <div class="color-picker" onclick="colorparmanent29()" id="colorpic29" style="background-color: rgb(43, 90, 166);"></div>
+                                  <div class="color-picker" onclick="colorparmanent30()" id="colorpic30" style="background-color: rgb(116, 103, 106);"></div>
+                                  <div class="color-picker" onclick="colorparmanent31()" id="colorpic31" style="background-color: rgb(72, 50, 77);"></div>
+                                  <div class="color-picker" onclick="colorparmanent32()" id="colorpic32" style="background-color: rgb(222, 227, 233);"></div>
+                                  <div class="color-picker" onclick="colorparmanent33()" id="colorpic33" style="background-color: rgb(217, 218, 222);"></div>
+                                  <div class="color-picker" onclick="colorparmanent34()" id="colorpic34" style="background-color: rgb(192, 193, 196);"></div>
+                                  <div class="color-picker" onclick="colorparmanent35()" id="colorpic35" style="background-color: rgb(126, 144, 163);"></div>
+                                  <div class="color-picker" onclick="colorparmanent36()" id="colorpic36" style="background-color: rgb(85, 98, 111);"></div>
+                                  <div class="color-picker" onclick="colorparmanent37()" id="colorpic37" style="background-color: rgb(36, 54, 64);"></div>
+                                  <div class="color-picker" onclick="colorparmanent38()" id="colorpic38" style="background-color: rgb(22,33,39);"></div>
+              
+              
+              
+                                 
+                                </div>
+                  
+                                </div>
+                                
+                                <!--After clicking Chat Wallpaper end-->
+              
+              
+                                    <div class="modal-footer">
+                                      <button type="button" id="backbtn" onclick="backfunc()" style="margin-right: auto; display: none;" class="btn btn-secondary" >Back</button>
+              
+                                    </div>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                              
+                           
+
+        
+        <div id="chat-form">
+            <div class="message-row you-message">
+              <div class="message-content">
+                <div class="message-text">Hello,hrithik. How are you? It’s been a long time since we last met.</div>
+              <div class="message-time">June 8</div>
+              </div>
+              
+            </div>
+            <div class="message-row other-message">
+
+              <div class="message-content">
+                <img style="width: 40px;border-radius: 100%;" src="images/hrithik.jpg" alt="Hrithik Roshan">
+                <div class="message-text"> Oh! Hi, Deep. I have got a new job now and doing great. How about you?</div>
+              <div class="message-time">June 8</div>
+              </div>
+            </div>
+            <div class="message-row you-message">
+              <div class="message-content">
+                <div class="message-text">Not too bad.</div>
+              <div class="message-time">June 8</div>
+              </div>
+              
+            </div>
+            <div class="message-row other-message">
+
+              <div class="message-content">
+                <img style="width: 40px;border-radius: 100%;" src="images/hrithik.jpg" alt="Hrithik Roshan">
+                <div class="message-text">How often do you eat at this cafe?</div>
+              <div class="message-time">June 8</div>
+              </div>
+            </div>
+            <div class="message-row you-message">
+              <div class="message-content">
+                <div class="message-text">This is my first time. My friends kept telling me the food was great. So, I decided to try it tonight. What have you been up to?</div>
+              <div class="message-time">June 8</div>
+              </div>
+              
+            </div>
+            <div class="message-row other-message">
+
+              <div class="message-content">
+                <img style="width: 40px;border-radius: 100%;" src="images/hrithik.jpg" alt="Hrithik Roshan">
+                <div class="message-text"> I have been so busy with my new job that I have not had the time to do much else but otherwise, me and the family are all fine.</div>
+              <div class="message-time">June 8</div>
+              </div>
+            </div>
+            <div class="message-row you-message">
+              <div class="message-content">
+                <div class="message-text">Well, I hope you and your family have a lovely meal.</div>
+              <div class="message-time">June 8</div>
+              </div>
+              
+            </div>
+            <div class="message-row other-message">
+
+              <div class="message-content">
+                <img style="width: 40px;border-radius: 100%;" src="images/hrithik.jpg" alt="Hrithik Roshan">
+                <div class="message-text">Yes, you too.</div>
+              <div class="message-time">June 8</div>
+              </div>
+            </div>
+            <div class="message-row you-message">
+              <div class="message-content">
+                <div class="message-text">ok</div>
+              <div class="message-time">June 8</div>
+              </div>
+              
+            </div>
+            <div class="message-row other-message">
+
+              <div class="message-content">
+                <img style="width: 40px;border-radius: 100%;" src="images/hrithik.jpg" alt="Hrithik Roshan">
+                <div class="message-text">Nothing is imposible</div>
+              <div class="message-time">June 8</div>
+              </div>
+            </div>
+            <div class="message-row you-message">
+              <div class="message-content">
+                <div class="message-text">ok</div>
+              <div class="message-time">June 8</div>
+              </div>
+              
+            </div>
+            <div class="message-row other-message">
+
+              <div class="message-content">
+                <img style="width: 40px;border-radius: 100%;" src="images/hrithik.jpg" alt="Hrithik Roshan">
+                <div class="message-text">Nothing is imposible</div>
+              <div class="message-time">June 8</div>
+              </div>
+            </div>
+            <div class="message-row you-message">
+              <div class="message-content">
+                <div class="message-text">
+                  <img src="images/akshay.png" alt="">
+                </div>
+              <div class="message-time">June 8</div>
+              </div>
+              
+            </div>
+            <div class="message-row other-message">
+
+              <div class="message-content">
+                <img style="width: 40px;border-radius: 100%;" src="images/hrithik.jpg" alt="Hrithik Roshan">
+                <div class="message-text">
+                  <img src="images/amir.png" alt="">
+                </div>
+              <div class="message-time">June 8</div>
+              </div>
+            </div>
+        </div>
+
+
+        <div id="conversation-list">
+
+          <div style="  position: sticky; top: 0px;">
+          <div class="search_box">
+            <div class="search_div">
+              <a  href=""><i class="fa fa-search fa-1x search_btn"></i></a>
+            <input  class="search_text"  type="text" placeholder=" Search People & Groups" name="search" >
+  
+            </div> 
+          </div>
+
+
+          <div class="sidebar-social">
+            <ul>
+            <li  onclick="switchVisible();">
+            <a class="main-icon"  title="CHAT" target="_blank" rel="nofollow"><i id="chati" class="fa fa-comments active"></i><span>chat</span></a></li>
+            
+            <li  onclick="switchVisible1();">
+              <a class="main-icon" title="CALLS" target="_blank" rel="nofollow"><i id="calli"  class="fa fa-phone"></i><span>CALLS</span></a>
+            </li>
+                    
+            <li onclick="switchVisible2();">
+              <a class="main-icon"  title="CONTACTS" target="_blank" rel="nofollow" ><i id="contacti" class="fa fa-address-book-o"></i><span>CONTACTS</span></a>
+            </li>
+                    
+            <li onclick="switchVisible3();">
+              <a class="main-icon"  title="Pinterest" target="_blank" rel="nofollow" ><i id="notifyi" class="fa fa-bell-o"></i><span>NOTIFICATION</span></a>
+            </li>
+            </ul>
+          </div>
+        </div>
+
+          <div id="chat-list">
+            <div class="conversation active">
+              <img  class="friend-img"  src="images/hrithik.jpg" alt="Hrithik Roshan ">
+              <div class="title-text">
+                Hrithik Roshan 
+              </div>
+              <div class="created-date">
+                June 8
+              </div>
+              <div class="conversation-message">
+                This is a message hgugfyegfufuigufigufieuifgaeugfaue
+              </div>
+            
+            </div>
+            <div class="conversation">
+              <img  class="friend-img"  src="images/akshay.png" alt="Hrithik">
+              <div class="title-text">
+                Akshay Kumar 
+              </div>
+              <div class="created-date">
+                June 2
+              </div>
+              <div class="conversation-message">
+                This is a message hgugfyegfufuigufigufieuifgaeugfaue
+              </div>
+            
+            </div>
+            <div class="conversation ">
+              <img  class="friend-img"  src="images/amir.jpg" alt="Hrithik">
+              <div class="title-text">
+                Amir Khan 
+              </div>
+              <div class="created-date">
+                June 8
+              </div>
+              <div class="conversation-message">
+                This is a message hgugfyegfufuigufigufieuifgaeugfaue
+              </div>
+            
+            </div>
+            <div class="conversation">
+              <img  class="friend-img"  src="images/hrithik-roshan.jpg" alt="Hrithik">
+              <div class="title-text">
+                Md. Shahid Mubashir Mia
+              </div>
+              <div class="created-date">
+                June 8
+              </div>
+              <div class="conversation-message">
+                This is a message hgugfyegfufuigufigufieuifgaeugfaue
+              </div>
+            
+            </div>
+            <div class="conversation ">
+              <img  class="friend-img"  src="images/hrithik.jpg" alt="Hrithik">
+              <div class="title-text">
+                Hrithik Roshan 
+              </div>
+              <div class="created-date">
+                June 8
+              </div>
+              <div class="conversation-message">
+                This is a message hgugfyegfufuigufigufieuifgaeugfaue
+              </div>
+            
+            </div>
+            <div class="conversation ">
+              <img  class="friend-img"  src="images/deep.jpg" alt="Hrithik">
+              <div class="title-text">
+                Deepanjan Adak
+              </div>
+              <div class="created-date">
+                June 8
+              </div>
+              <div class="conversation-message">
+                This is a message hgugfyegfufuigufigufieuifgaeugfaue
+              </div>
+            
+            </div>
+            <div class="conversation ">
+              <img  class="friend-img"  src="images/deep.jpg" alt="Hrithik">
+              <div class="title-text">
+                Deepanjan Adak
+              </div>
+              <div class="created-date">
+                June 8
+              </div>
+              <div class="conversation-message">
+                This is a message hgugfyegfufuigufigufieuifgaeugfaue
+              </div>
+            
+            </div>
+          </div>
+          <div id="call-list">
+            <div style="text-align: center;" >
+              <p></p>
+              <button class="btn" style="padding: 5px 20px; background-color:white; border-radius: 1.2rem; width: 200px;"><i class="fa fa-users">  Start Conference</i></button>
+             <p></p>
+            </div>
+            <div class="calls">
+              <img  class="friend-chat-img"  src="images/hrithik.jpg" alt="Hrithik">
+              <div class="title-name">
+                Hrithik 
+              </div>
+             </div> 
+             <div class="calls">
+              <img  class="friend-chat-img"  src="images/amir.jpg" alt="Amir">
+              <div class="title-name">
+                Amir Khan 
+              </div>
+             </div> 
+             <div class="calls">
+              <img  class="friend-chat-img"  src="images/akshay.png" alt="Hrithik">
+              <div class="title-name">
+                Akshay Kumar 
+              </div>
+             </div> 
+             <div class="calls">
+              <img  class="friend-chat-img"  src="images/deep.jpg" alt="Deepanjan">
+              <div class="title-name">
+                Deepanjan 
+              </div>
+             </div> 
+             <div class="calls">
+              <img  class="friend-chat-img"  src="images/hrithik-roshan.png" alt="hrithik-roshan">
+              <div class="title-name">
+                Hrithik Roshan 
+              </div>
+             </div> 
+             <div class="calls">
+              <img  class="friend-chat-img"  src="images/deep.jpg" alt="Deep">
+              <div class="title-name">
+                Deep 
+              </div>
+             </div> 
+             <div class="calls">
+              <img  class="friend-chat-img"  src="images/deep.jpg" alt="Deep">
+              <div class="title-name">
+               Md. Shahid Mubashir Mia
+              </div>
+             </div> 
+          </div>
+            <div id="Contacts-list" >
+              <div style="text-align: center;" >
+                <p></p>
+                <button class="btn" style="padding: 5px 20px; background-color:white; border-radius: 1.2rem; width: 200px;"><i class="fa fa-user-plus">  Add Contact</i></button>
+              </div>
+              <div class="contact-div">
+                <img  class="friend-chat-img"  src="images/deep.jpg" alt="Deep">
+                <div class="title-name">
+                 Md. Shahid Mubashir Mia
+                </div>
+               </div> 
+            </div> 
+            <div id="Notification-list" >
+              <div class="Notification-div">
+                  <img  class="friend-img"  src="images/hrithik.jpg" alt="Hrithik Roshan ">
+                  <div class="title-text">
+                    Hrithik Roshan 
+                    <p style="font-weight: normal;font-size:11px ;">Today at 9:30AM</p>
+                  </div>
+                 
+                 <div id="btn">
+                    <a href=""><i class="fa fa-video-camera"></i></a>
+                 </div>
+              </div>
+              <div class="Notification-div">
+                <img  class="friend-img"  src="images/hrithik.jpg" alt="Hrithik Roshan ">
+                <div class="title-text">
+                  Hrithik Roshan 
+                  <p style="font-weight: normal;font-size:11px ;">Today at 9:30AM</p>
+                </div>
+               
+               <div id="btn">
+                  <a href=""><i class="fa fa-phone"></i></a>
+               </div>
+            </div>
+                 
+              
+            </div> 
+        
+       
+        </div>
+        <div id="new-message-container" >
+          <div class="message-box" style="margin:20px;display: grid;grid-template-columns: 0.2fr 1.6fr  0.2fr ;  list-style-type: none;" >
+            <div id="micro-phone" href="#" style="color: rgb(129, 121, 121);margin-left: 30px; font-size: 25px; display: inline;"><i class="fa fa-microphone" aria-hidden="true" ></i></div>
+            
+            <div  style=" margin-top: 5px;" ><input style="width:900px;" id="type-message" type="text" name="text" placeholder="Type a message ">
+            </div>  
+            <div id="paper-clip"   style="color: rgb(129, 121, 121); font-size: 25px;margin-left: 30px; display: inline;">
+              <div class="dropup">
+                <a class="dropbtn1"><i  class="fa fa-paperclip" ></i></a>
+                <div id="Dropdown" class="dropup-content">
+                   <label title="Photos and Videos" id="attach-pic" href="#home"><i class="fa fa-picture-o" aria-hidden="true"><input accept="image/*,video/mp4,video/3gpp,video/quicktime" type="file" hidden></i></label>
+                   <label title="Camera" id="attach-camera" href="#about"><i class="fa fa-camera" aria-hidden="true"></i></label>
+                   <label title="Documents" id="attach-file" href="#contact"><i class="fa fa-file-o" aria-hidden="true"><input accept="*" type="file" hidden></i></label>
+                   <label title="Contacts" id="attach-user" href="#"><i class="fa fa-user-o" aria-hidden="true"></i></label>
+           
+                </div>
+              </div>
+            </div>
+                     
+            
+             <a href="#" id="sendi" style="color: rgb(121, 181, 238); font-size: 25px;display: none;"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+             </div>
+        </div>
+        
+
+    </div>
+    
+
+
+    <script type="text/javascript">
+      // this is the code for dropup in new-message-function
+
+      $(document).ready(function(){
+                      $(".dropbtn1").click(function(){
+                         $(".dropup-content").slideToggle("slow");
+                         
+                      });
+                      $(document).mouseup(function (e) { 
+            if ($(e.target).closest(".dropup").length === 0) { 
+                $(".dropup-content").slideUp("slow"); 
+            }
+            
+            
+        }); 
+                      
+     
+                  
+});
+
+
+
+                    // JS code for Modal Setting reset and emoji
+           $(document).ready(function() {
+                $("#myModal3").on("hidden.bs.modal", function() {
+                     $("#mbody1").css("display","block"),
+                     $("#mbody2").css("display","none"),
+                     $("#mbody3").css("display","none");
+                     $("#backbtn").css("display","none");
+
+
+
+                            });
+                        });
+
+                        $(document).ready(function() {
+                           $("#type-message").emojioneArea();
+                              });
+        </script>
+  
+
+  
+</body>
+</html>

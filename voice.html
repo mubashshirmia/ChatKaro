@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>voicecall</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/voice.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Voicecall Connecting...</a>
+        <a class="navbar-brand ml-auto" href="#"><button class="top1"> <i class="fa fa-gear" style="font-size:18px"></i></button></a>
+        <a class="navbar-brand" href="#">       <button class="top2"> <i class="material-icons" style="font-size:22px">person_add_alt_1</i></button></a>
+
+   
+      </nav>
+        <div style="max-height: 250px;"><img class="avatar" src="images/avatar.png" alt=""></div>
+      <p></p>
+        <nav class="navbar navbar-expand-sm navbar-dark  fixed-bottom justify-content-center" style="bottom: 5%;">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#"><button  class="btn" > <span class="material-icons" style="font-size:25px;color:white;">&#xe0b1;</span></button></a>
+        <a class="navbar-brand" href="#"><button id="mic-btn" onclick="micfunc()" class="btn" style="background-color:rgba(255, 255, 255, 0.589);"> <span id="mic-phn" style='font-size:25px;' class="material-icons">mic</span></button></a>
+        <a class="navbar-brand" href="#"><button id="cam-btn" onclick="videofunc()"  class="btn" style="background-color:rgba(255, 255, 255, 0.589);"> <span  id="video-cam" class="material-icons" style="font-size:25px">videocam</span></button></a>
+
+       
+      </nav>
+      <script>
+        function videofunc()
+        { 
+            if (document.getElementById("video-cam").innerHTML !="videocam_off") {
+            
+         document.getElementById("video-cam").innerHTML ="videocam_off";
+            document.getElementById("cam-btn").style.backgroundColor = "grey";
+        }
+
+        else
+        {
+            document.getElementById("video-cam").innerHTML ="videocam";
+            document.getElementById("cam-btn").style.backgroundColor = "rgb(255,255,255,0.589)";
+        }
+           
+        }
+
+        function micfunc()
+        { 
+            if (document.getElementById("mic-phn").innerHTML !="mic_off") {
+            
+         document.getElementById("mic-phn").innerHTML ="mic_off";
+            document.getElementById("mic-btn").style.backgroundColor = "grey";
+        }
+
+        else
+        {
+            document.getElementById("mic-phn").innerHTML ="mic";
+            document.getElementById("mic-btn").style.backgroundColor = "rgb(255,255,255,0.589)";
+        }
+           
+        }
+
+ 
+
+
+
+
+
+      </script>
+    
+</body>
+
+</html>

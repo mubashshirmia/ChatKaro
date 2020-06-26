@@ -1,0 +1,696 @@
+*{
+    margin: 0;
+    padding :0;
+    box-sizing: border-box;
+
+}
+/* for full screen*/
+@media only screen and (max-width:1520px){
+ .chat-container{
+    height: 100vh;
+    width: 100vw;
+   
+    display: grid;
+    grid-template-columns: 1.2fr 0.5fr;
+      grid-template-rows:70px 2fr 80px;
+   
+}
+/*for own profile*/
+ #search-container
+ {
+  
+background-color:  rgba(217, 223, 221, 0.945);
+ box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.75);
+    z-index: 1; 
+    border-radius:0px 10px 0px 0px; 
+    
+}
+#profile_img{
+  margin: 17px 18px;
+  
+  border-radius: 100%;
+ 
+}
+
+.dropbtn {
+  font-size: 17px;
+ 
+  cursor: pointer;
+  border: 0 none;
+ color: rgb(17, 17, 17);
+  margin: 0;
+  padding: 0;
+ 
+  outline: 0;
+  
+}
+
+/* .dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+} */
+
+.dropdown {
+
+  display: inline-block;
+  margin-left: 120px;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  overflow: auto;
+ font-size: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(41, 29, 29, 0.2);
+  z-index: 1;
+  border-radius: 0.2rem;
+  
+  
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+/* For Modal */
+.modal-content{
+  height: 550px;
+ 
+}
+.modal-header{
+  height: 80px;
+  background-color: #00ABE3;
+}
+.modal-title{
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.modal-body{
+  background-color: beige;
+}
+.Participent{
+  display: grid;
+  grid-template-columns: 40px 1fr max-content;
+  grid-gap: 12px;
+  font-size: 16px;
+  background-color: #ddd;
+  border-bottom: 2px solid #faf7f7;
+  border-radius: 10px;
+  color: black;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+ }
+ .Participent:hover
+ {
+   background-color: #00ABE3;
+   color: #fff;
+   
+   
+ }
+ .Participent-img{
+  width: 40px;
+  
+  border-radius: 100%;
+ }
+ .checkbox input{
+   margin-top: 10px;
+   height: 25px;
+   width: 15px;
+ }
+
+ .color-picker
+ {
+  display: inline-block;
+  grid-template-columns: 40px 1fr max-content;
+  grid-gap: 12px;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 3px solid transparent;
+ }
+ #target-div{
+   display: flex;
+   
+ }
+ #group-title-div{
+   margin-top: 25px;
+   display: grid;
+   grid-template-rows: repeat(2,1fr);
+ }
+
+#contact-search{
+  margin-left: 30px;
+  width: 75%;
+  padding: 10px ;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+}
+.contact-search-btn{
+ color: #f35a1d;
+}
+.img-div{
+  position: relative;
+  margin-left: 160px;
+  width: 120px;
+  min-height: 120px;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+#Own-profile-img{
+  border-radius: 100%;
+ 
+  width: 100%;
+}
+#profile-title-div{
+  display: grid;
+  /* grid-template-rows: 15px 35px 15px 40px 15px;
+  grid-row-gap: 12px; */
+  width: 100%;
+  height: 250px;
+  padding: 10px 25px;
+  margin-top: 12px;
+  background-color:transparent;
+  font-size: 14px;
+}
+#text{
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-template-rows: 50px;
+  grid-column-gap: 5px;
+ 
+}
+#text input{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black ;
+  background-color: transparent;
+}
+#text i{
+  color: #030303;
+}
+.title{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+ cursor: pointer;
+}
+#Setting-content{
+  display: grid;
+  grid-template-rows: 120px 65px 65px;
+  text-align: center;
+  color: rgb(180, 172, 172);
+  
+}
+/*for friend chat title*/
+#chat-title{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(217, 223, 221, 0.945);
+    /* height: 60px;
+    width: 75%;
+    float: left; */
+    color: rgb(16, 17, 17);
+    
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    
+}
+.title-name{
+  margin-top: 10px;
+}
+
+
+#frnd-title{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  font-weight: bold;
+    font-size: 18px;
+} .img-box{
+  float: left;
+}
+.title-name{
+  float: left;
+}
+.icons{
+  float: right;
+ 
+}
+.icons a i{
+  color: #444444;
+}
+.icons a i:hover{
+  color: #00ABE3;
+}
+.title-icon{
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px; 
+  /* color:rgb(0, 236, 253) ; */
+  background-color: white;
+  margin-right: 20px;
+ 
+  border-radius: 50% ;
+  cursor: pointer;
+}
+
+#conversation-list{
+/* 
+    height: 85vh;
+    width: 25%;
+    position: fixed;
+    float: left;
+    top: 60px;
+    left: 0; */
+    background-color: rgb(233, 230, 230);
+    grid-row: 2/-1;
+    grid-column: 2/3;
+    box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.75);
+     overflow: scroll;
+}
+/*for searchbar*/
+.search_box{
+  width: 100%;
+  background-color: rgb(233, 230, 230);
+  height: 60px;
+  padding: 15px 25px;
+  
+} 
+.search_div
+{
+  width: 325px;
+  display: inline-block;
+  background-color: white;
+  padding: 5px 15px;
+ 
+  border-radius: 40px;
+  
+  
+}
+ .search_text{
+  border: none;
+  outline: none;
+  width: 80%;
+  margin-left:10px;
+  /* position: relative; */
+  height: 100%;
+}
+.search_btn{
+  color:#f35a1d;
+
+}
+/* .sidebar-social {
+  margin: 0;
+  padding: 0;
+} */
+/*for social media icons*/
+.sidebar-social ul {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.sidebar-social li {
+  text-align: center;
+  width: 23.80%;
+  height: 75px;
+  margin-top: 5px!important;
+ cursor: pointer;
+ 
+  display: inline-block;
+  font-size: 10px;
+  padding:0;
+}
+
+.sidebar-social i {
+/* display: block; */
+margin: 0 auto 10px auto;
+width: 32px;
+  /* height: 32px;
+  margin: 10px auto 0;
+  line-height: 32px; */
+  text-align: center;
+  font-size: 20px;
+  color: #444444;
+margin-top:0;
+padding-top:5px;
+}
+.sidebar-social a{
+text-decoration:none;
+width:100%;
+height:100%;
+display:block;
+margin:0;
+padding:0;
+}
+
+.sidebar-social a span{
+color:black;
+font-size:10px;
+padding:5px 0 10px 0;
+display:block;
+text-transform:uppercase;
+font-family:'Josefin Sans';
+letter-spacing:1px;
+}
+
+.sidebar-social a:hover 
+i.fa-comments,
+.sidebar-social a:hover i.fa-phone,
+.sidebar-social a:hover i.fa-address-book-o ,
+.sidebar-social a:hover i.fa-bell-o
+ { color: #00ABE3; }
+ .main-icon .active{
+  color: #00ABE3;
+ }
+/*for friend chat list*/
+ #chat-list{
+   display: block;
+ }
+ .conversation{ 
+  display: grid;
+  grid-template-columns: 40px 1fr max-content;
+  grid-gap: 10px;
+  font-size: 14px;
+ background-color: rgb(211, 218, 226);
+  border-bottom: 1px solid #ffffff;
+  color: black;
+  padding: 15px 15px 15px 10px;
+
+}
+.title-text{
+  font-weight: bold;
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+.conversation.active,
+.conversation:hover{
+  background-color: rgb(122, 215, 238);
+}
+.conversation:hover{
+  cursor: pointer;
+}
+.conversation-message{
+  grid-column: span 2;
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+/*for calls list*/
+ #call-list{
+   display: none;
+ }
+ .calls{
+  display: grid;
+  grid-template-columns: 40px 1fr max-content;
+  grid-gap: 12px;
+  font-size: 16px;
+  background-color: rgb(211, 218, 226);
+ 
+  border-bottom: 1px solid #ffffff;
+  color: black;
+  padding: 10px 10px;
+  cursor: pointer;
+ }
+ .title-name{
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  position: center;
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+.friend-chat-img{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  /* grid-row: span 2; */
+}
+.calls:hover{
+  background-color: rgb(122, 215, 238);
+
+}
+/*for contact list*/
+#Contacts-list{
+  display: none;
+}
+#Add-contact{
+  text-align: center;
+  margin-top: 17px;
+  margin-left:69px;
+  width: 225px;
+  display: inline-block;
+  background-color: white;
+  padding: 5px 15px;
+ font-size: 14px;
+  border-radius: 40px;
+  
+}
+#btn-text{
+  border: none;
+  outline: none;
+  background-color:white ;
+}
+#Add-contact i {
+  color: black;
+}
+.contact-div{
+  display: grid;
+  grid-template-columns: 40px 1fr max-content;
+  grid-gap: 12px;
+  font-size: 16px;
+  background-color: rgb(211, 218, 226);
+  border-bottom: 1px solid #ffffff;
+  color: black;
+  padding: 10px 10px;
+  margin-top: 15px;
+  cursor: pointer;
+ }
+ .contact-div:hover{
+  background-color: rgb(122, 215, 238);
+
+ }
+ /*for notification list*/
+#Notification-list{
+  display: none;
+  margin-top: 15px;
+}
+.Notification-div{
+  
+  display: grid;
+  grid-template-columns: 40px 1fr max-content;
+
+  grid-gap: 10px;
+  font-size: 14px;
+  background-color: rgb(211, 218, 226);
+ 
+  border-bottom: 1px solid #ffffff;
+  color: black;
+  padding: 10px;
+
+}
+#btn{
+  font-size: 18px;
+  margin-top: 15px;
+}
+#btn i{
+  color: #030303;
+}
+/* #Notification-btn{
+  display: block;
+}
+#cancel-btn{
+  margin-top: 18px;
+  margin-left: 25px;
+  padding: 2px;
+} */
+.Notification-div:hover{
+ background-color: rgb(122, 215, 238);
+}
+
+.title-text{
+  margin-top: 12px;
+  font-weight: bold;
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.friend-img{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  grid-row: span 2;
+  margin-top: 8px;
+}
+/* for main chat form */
+#chat-form
+ {   /* height: 85vh;
+    width: 75%;
+    position: fixed;
+    float: left;
+    top: 60px;
+    left: 25%; */
+    border-radius: 0 0 10px 0;
+    background: rgb(255, 255, 255);
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 20px;
+    overflow-y: scroll;
+    
+}
+.message-row{
+  display: grid;
+  grid-template-columns: 70%;
+  margin-bottom: 20px;
+}
+.message-text{
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+.message-time{
+  font-size: 0.6rem;
+  color: #777;
+
+}
+.message-content{
+  display: grid;
+}
+.you-message .message-content{
+  justify-items: end;
+}
+.you-message{
+  justify-content: end;
+  
+}
+.other-message .message-content{
+  grid-template-columns: 48px 1fr;
+  grid-column-gap:10px;
+}
+.message-row img{
+  grid-row: span 2;
+}
+.other-message{
+  justify-content: start;
+  justify-items: start;
+}
+.you-message .message-text{
+  background: rgb(122, 215, 238);
+  color: black;
+  /* border: 1px solid #0048AA; */
+  border-radius: 14px 14px 0 14px;
+}
+.other-message .message-text{
+  background: rgb(211, 218, 226);
+  color: black;
+  /* border: 1px solid #0048AA; */
+  border-radius: 14px 14px 0 14px;
+}
+.message-text img{
+  width: 250px;
+   height: 200px;
+}
+/*#search-container
+{
+   
+    
+}*/
+/*for message type bar*/
+#new-message-container{
+    /* height: 40px;
+    width: 25%;
+    position: fixed;
+    float: left;
+    bottom: 0;
+    left: 0; */
+    background-color: rgb(226, 226, 226);
+    
+    box-shadow: -1px 0px rgba(0, 0, 0, 0.25);
+    z-index: 1; 
+    
+   
+    /* border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 0 10px; 
+    background-color: rgb(221, 43, 43);*/
+}
+
+
+/* #chat-list{
+    background-color: rgba(217, 223, 221, 0.945);    
+}  */
+  /* .message-box{
+   margin: 5px;
+   padding: 7px 12px;
+   
+    
+  } */
+  #type-message{
+    
+    height: auto;
+    /* padding: 8px 20px; */
+    margin: 8px 15px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    /* text-align: start; */
+  }
+
+}
+@media only screen and (max-width:900px){
+  .chat-container{
+    display: grid;
+    grid-template-columns:540px 350px ;
+    grid-template-rows: 70px 1fr 80px;
+     /* grid-template-areas:
+    "chat-title" 
+    "search-container"
+    "chat-form"
+    "conversation-list"
+    "new-massage-container" ;  */
+   } 
+  }
+
+ @media only screen and (max-width:657px){
+  .chat-container{
+    display: grid;
+    grid-template-columns:400px 350px ;
+    grid-template-rows: 70px 1fr 80px;
+     /* grid-template-areas:
+    "chat-title" 
+    "search-container"
+    "chat-form"
+    "conversation-list"
+    "new-massage-container" ;  */
+   }  
+   .message-box{
+     display: grid;
+     grid-template-columns: 0.2fr 1fr 0.2fr;
+   }
+   #micro-phone{
+     margin-right: 25px;
+   }
+   #paper-clip{
+     margin-right: 15px;
+   }
+} 
